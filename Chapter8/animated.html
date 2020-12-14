@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="animated.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+  
+<style>
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+body {
+  background: #374e59;
+  color: #c06162;
+  font-family: 'Sen';
+  margin-bottom: 200px;
+}
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.menu-container {
+  margin-top: 20px;
+}
+.menu-container h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.menu-container:nth-child(3) {
+  margin-top: 200px;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.dropdown {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #c06162;
+  background: #34495e;
+  position: relative;
+  font-size: 18px;
+  perspective: 1000px;
+  z-index: 100;
+}
+.dropdown:hover {
+  background: #2980b9;
+  cursor: pointer;
+}
+.dropdown:hover .dropdown_menu li {
+  display: block;
+}
+.dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  z-index: -1;
+}
+.dropdown_menu li {
+  display: none;
+  color: #fff;
+  background-color: #34495e;
+  padding: 10px 20px;
+  font-size: 16px;
+  opacity: 0;
+}
+.dropdown_menu li:hover {
+  background-color: #2980b9;
+}
+.dropdown:hover .dropdown_menu--animated {
+  display: block;
+}
+.dropdown_menu--animated {
+  display: none;
+}
+.dropdown_menu--animated li {
+  display: block;
+  opacity: 1;
+}
+.dropdown_menu-6 {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+.dropdown_menu-7 {
+  animation: rotateMenu 400ms ease-in-out forwards;
+  transform-origin: top center;
+}
+.dropdown_menu-8 {
+  animation: downOut 300ms ease-in-out forwards;
+  transform-origin: center center;
+}
+.dropdown_menu-9 {
+  animation: growOut 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+.dropdown_menu-10 {
+  animation: rotateY 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+.dropdown_menu-1 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: slideDown 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-1 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: slideDown 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-1 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: slideDown 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-1 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: slideDown 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-1 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: slideDown 300ms 300ms ease-in-out forwards;
+}
+.dropdown_menu-2 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: rotateX 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-2 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: rotateX 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-2 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: rotateX 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-2 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: rotateX 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-2 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: rotateX 300ms 300ms ease-in-out forwards;
+}
+.dropdown_menu-3 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: rotateZ 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-3 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: rotateZ 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-3 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: rotateZ 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-3 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: rotateZ 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-3 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: rotateZ 300ms 300ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 300ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 300ms ease-in-out forwards;
+}
+.dropdown_menu-5 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: translateX 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-5 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: translateX 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-5 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: translateX 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-5 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: translateX 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-5 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: translateX 300ms 1200ms ease-in-out forwards;
+}
+@-moz-keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-o-keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-moz-keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@-o-keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@-moz-keyframes downOut {
+  0% {
+    transform: translateZ(200px) transLateY(40px);
+  }
+  80% {
+    transform: translateZ(-10px) transLateY(0px);
+  }
+  100% {
+    transform: translateZ(0px) transLateY(0px);
+  }
+}
+@-webkit-keyframes downOut {
+  0% {
+    transform: translateZ(200px) transLateY(40px);
+  }
+  80% {
+    transform: translateZ(-10px) transLateY(0px);
+  }
+  100% {
+    transform: translateZ(0px) transLateY(0px);
+  }
+}
+@-o-keyframes downOut {
+  0% {
+    transform: translateZ(200px) transLateY(40px);
+  }
+  80% {
+    transform: translateZ(-10px) transLateY(0px);
+  }
+  100% {
+    transform: translateZ(0px) transLateY(0px);
+  }
+}
+@keyframes downOut {
+  0% {
+    transform: translateZ(200px) transLateY(40px);
+  }
+  80% {
+    transform: translateZ(-10px) transLateY(0px);
+  }
+  100% {
+    transform: translateZ(0px) transLateY(0px);
+  }
+}
+@-moz-keyframes growOut {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes growOut {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-o-keyframes growOut {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes growOut {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes rotateY {
+  0% {
+    transform: rotateY(90deg);
+  }
+  80% {
+    transform: rotateY(-10deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+@-webkit-keyframes rotateY {
+  0% {
+    transform: rotateY(90deg);
+  }
+  80% {
+    transform: rotateY(-10deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+@-o-keyframes rotateY {
+  0% {
+    transform: rotateY(90deg);
+  }
+  80% {
+    transform: rotateY(-10deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+@keyframes rotateY {
+  0% {
+    transform: rotateY(90deg);
+  }
+  80% {
+    transform: rotateY(-10deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+@-moz-keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-o-keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+@-o-keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+@keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+@-moz-keyframes rotateZ {
+  0% {
+    opacity: 0;
+    transform: translateZ(290px);
+  }
+  80% {
+    transform: translateZ(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@-webkit-keyframes rotateZ {
+  0% {
+    opacity: 0;
+    transform: translateZ(290px);
+  }
+  80% {
+    transform: translateZ(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@-o-keyframes rotateZ {
+  0% {
+    opacity: 0;
+    transform: translateZ(290px);
+  }
+  80% {
+    transform: translateZ(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@keyframes rotateZ {
+  0% {
+    opacity: 0;
+    transform: translateZ(290px);
+  }
+  80% {
+    transform: translateZ(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@-moz-keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-o-keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-o-keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@-o-keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" data-new-gr-c-s-check-loaded="14.973.0">
+  <h1>10 Dropdown Animations</h1>
+
+<div class="menu-container">
+  <h3>Animate the Whole Menu</h3>
+  <nav>
+  <ul class="menu">
+    <li class="dropdown dropdown-6">
+      Scale Down
+      <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+     <li class="dropdown dropdown-7">
+      RotateX
+      <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-7">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    <li class="dropdown dropdown-8">
+      TranslateZ
+      <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-8">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    <li class="dropdown dropdown-9">
+      Scale
+      <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-9">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    <li class="dropdown dropdown-10">
+      Rotate Y
+      <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-10">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+
+
+
+<div class="menu-container">
+  <h3>Animate Each Menu Items</h3>
+<nav>
+  <ul class="menu">
+    <li class="dropdown dropdown-1">
+      TranslateY
+      <ul class="dropdown_menu dropdown_menu-1">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+     <li class="dropdown dropdown-2">
+      RotateX
+      <ul class="dropdown_menu dropdown_menu-2">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    <li class="dropdown dropdown-3">
+      TranslateZ
+      <ul class="dropdown_menu dropdown_menu-3">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    <li class="dropdown dropdown-4">
+      Scale
+      <ul class="dropdown_menu dropdown_menu-4">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    <li class="dropdown dropdown-5">
+      TranslateX
+      <ul class="dropdown_menu dropdown_menu-5">
+        <li class="dropdown_item-1">Item 1</li>
+        <li class="dropdown_item-2">Item 2</li>
+        <li class="dropdown_item-3">Item 3</li>
+          <li class="dropdown_item-4">Item 4</li>
+          <li class="dropdown_item-5">Item 5</li>
+      </ul>
+    </li>
+    
+  </ul>
+</nav>
+</div>
+  
+  
+  
+  
+  
+
+
+
+
+ 
+</body></html>
