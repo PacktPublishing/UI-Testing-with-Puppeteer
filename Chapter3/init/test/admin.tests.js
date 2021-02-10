@@ -10,10 +10,7 @@ describe('Admin Page', () => {
     let pageModel;
 
     before(async () => {
-        console.log(config.launchOptions);
-        console.log(config.launchOptions.executablePath);
         browser = await puppeteer.launch(config.launchOptions);
-
     });
 
     beforeEach(async () => {

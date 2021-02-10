@@ -5,6 +5,6 @@ module.exports = class AdminPageModel {
     }
 
     async go() {
-        await this.page.goto(this.config.baseURL + 'admin');
+        return await this.page.goto(this.config.baseURL + 'admin');
     }
 }
