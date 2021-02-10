@@ -10,7 +10,7 @@ describe('Login Page', () => {
     let pageModel;
 
     before(async() => {
-        browser = await puppeteer.launch({ product: 'firefox', headless:false});
+        browser = await puppeteer.launch({ headless:false});
     });
 
     beforeEach(async () => {
