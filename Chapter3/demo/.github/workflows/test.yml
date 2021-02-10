@@ -1,0 +1,22 @@
+name: CI
+on: push
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install Web Dependencies
+      working-directory: ./vuejs-firebase-shopping-cart
+      run: npm install
+    - name: Install Test Dependencies
+      env:
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+      run: npm install
+    - name: Run Site Test Code
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh
