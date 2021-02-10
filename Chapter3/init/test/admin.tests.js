@@ -20,21 +20,13 @@ describe('Admin Page', () => {
         page = await browser.newPage();
         page.setDefaultTimeout(config.timeout);
         pageModel = new AdminPageModel(page, config);
-    })
+    });
 
     afterEach(async () => {
         await page.close();
-    })
+    });
 
     after(async () => {
         await browser.close();
-    })
-
-    it('Should redirect to the login page', async () => {
-        const response = await pageModel.go();
-        response.request().redirectChain()[0].response().status().should.equal(302);
-        response.request().redirectChain()[0].response().url().should.contain('admin');
-        response.status().should.equal(200);
-        response.url().should.contain('login');
     });
 });

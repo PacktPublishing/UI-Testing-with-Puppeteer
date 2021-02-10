@@ -60,8 +60,8 @@ describe('Login Page', () => {
         const userDataDir = fs.mkdtempSync('profile');
         const options = config.launchOptions;
         options.userDataDir =  userDataDir;
-        let persistingBrowser = await puppeteer.launch(options);
-        let persistentPage = await persistingBrowser.newPage();
+        let persistentBrowser = await puppeteer.launch(options);
+        let persistentPage = await persistentBrowser.newPage();
         let loginModel = new LoginPageModel(persistentPage, config);
 
         await loginModel.go();
@@ -69,16 +69,16 @@ describe('Login Page', () => {
         await loginModel.login(config.username, config.password);
         (await loginModel.logState()).should.equal('Logout');
 
-        await persistingBrowser.close();
+        await persistentBrowser.close();
 
-        persistingBrowser = await puppeteer.launch(options);
-        persistentPage = await persistingBrowser.newPage();
+        persistentBrowser = await puppeteer.launch(options);
+        persistentPage = await persistentBrowser.newPage();
         loginModel = new LoginPageModel(persistentPage, config);
         await loginModel.go();
 
         (await loginModel.logState()).should.equal('Logout');
         
-        await persistingBrowser.close();
+        await persistentBrowser.close();
         deleteFolderRecursive(userDataDir);
     });
 
