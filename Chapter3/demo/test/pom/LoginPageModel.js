@@ -5,7 +5,7 @@ module.exports = class LoginPageModel {
     }
 
     async go() {
-        await this.page.goto(this.config.baseURL + 'login');
+        return await this.page.goto(this.config.baseURL + 'login');
     }
 
     async title() {
