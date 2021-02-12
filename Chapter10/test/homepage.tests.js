@@ -122,7 +122,7 @@ describe('Home Page', () => {
       });
     });
 
-    it.only('It should have good coverage', async() =>{
+    it('It should have good coverage', async() =>{
       await Promise.all([page.coverage.startJSCoverage(), page.coverage.startCSSCoverage()]);
       await page.goto(config.baseURL);
       const [jsCoverage, cssCoverage] = await Promise.all([page.coverage.stopJSCoverage(), page.coverage.stopCSSCoverage()]);

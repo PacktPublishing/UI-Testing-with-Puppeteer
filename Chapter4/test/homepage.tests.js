@@ -37,7 +37,7 @@ describe('Home Page', () => {
       (await pageModel.getStock(config.productToTestName)).should.equal('15 left in stock');
     });
 
-    it.only('Should load an image', async() => {
+    it('Should load an image', async() => {
       (await pageModel.getPrice(config.productToTestName)).should.equal('$1199');
       (await pageModel.getStock(config.productToTestName)).should.equal('15 left in stock');
     });

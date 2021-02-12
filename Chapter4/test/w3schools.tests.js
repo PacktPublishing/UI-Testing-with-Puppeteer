@@ -30,7 +30,7 @@ describe('w3Schools hover Test', () => {
         await browser.close();
     })
 
-    it.only('Should hover', async() => {
+    it('Should hover', async() => {
       const btn = await page.$('.dropbtn');
       const box = await btn.boundingBox();
       await page.mouse.move(box.x + (box.width / 2), box.y + (box.height / 2));

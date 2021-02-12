@@ -38,7 +38,7 @@ describe('Login Page', () => {
       await page.waitForSelector('.thumbnail.card');
     });
 
-    it.only('Should login on 3G', async() => {
+    it('Should login on 3G', async() => {
       await page._client.send(
         'Network.emulateNetworkConditions',
         {

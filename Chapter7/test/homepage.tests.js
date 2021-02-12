@@ -52,7 +52,7 @@ describe('Home Page', () => {
        (await images.evaluate(e => e.length)).should.equal(0);
     });
 
-    it.only('Should visually match', async() => {
+    it('Should visually match', async() => {
       const target = differencify.init({ chain: false, testName: 'Home'});
       await target.launch();
       const page = await target.newPage();

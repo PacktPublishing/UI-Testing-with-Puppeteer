@@ -98,7 +98,7 @@ await cartIsTwoPromise;
     });
 
 
-it.only('Should update the cart number (with listeners)', async() => {
+it('Should update the cart number (with listeners)', async() => {
     await page.goto('https://www.packtpub.com/tech/javascript/');
     const cookieLink = await page.waitForSelector('.accept_all', { timeout : 1000}).catch(e => e);
     

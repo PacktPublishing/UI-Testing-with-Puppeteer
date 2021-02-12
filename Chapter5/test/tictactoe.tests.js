@@ -19,7 +19,7 @@ describe('tic-tac-toe Test', () => {
     beforeEach(async () => {
         page = await browser.newPage();
         page.setDefaultTimeout(config.timeout);
-        await page.goto('file:///Users/neo/Library/Mobile%20Documents/com~apple~CloudDocs/Docs/Books/Up%20and%20running%20with%20Puppeteer/CH4/Code/tictactoe.html');
+        await page.goto(pathToFileURL(Path.join(__dirname,  '..', 'tictactoe.html')));
     })
 
     afterEach(async () => {
@@ -30,7 +30,7 @@ describe('tic-tac-toe Test', () => {
         await browser.close();
     })
 
-    it('Should Play', async() => {
+    it.only('Should Play', async() => {
       const startingX = 20;
       const startingY = 20;
       const boxMiddle = 16;
@@ -46,4 +46,10 @@ describe('tic-tac-toe Test', () => {
       expect(await page.$eval('#status', status => status.innerHTML)).to.be.equal('Winner: X');
     });
 
+   function pathToFileURL(path) {
+     let pathName = path.replace(/\\/g, '/');
+     // Windows drive letter must be prefixed with a slash.
+     if (!pathName.startsWith('/')) pathName = '/' + pathName;
+     return 'file://' + pathName;
+   }
 });

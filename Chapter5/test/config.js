@@ -4,7 +4,7 @@ module.exports = ({
         username: 'admin@gmail.com',
         password: 'admin',
         productToTestName: 'Macbook Pro 13.3\' Retina MF841LL/A',
-        productIDToTest: 1,
+        productToTestId: 1,
         productImage: 'https://www.dropbox.com/s/swg9bdr0ejcbtrl/img9.jpg?raw=1',
         launchOptions: { headless: false },
         timeout: 50000,
