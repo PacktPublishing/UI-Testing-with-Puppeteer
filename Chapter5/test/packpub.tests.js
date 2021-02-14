@@ -112,13 +112,13 @@ it('Should update the cart number (with listeners)', async() => {
     ]);
     
 const reachedToTwo = new Promise((resolve) => {
-    page.exposeFunction('notifiyCartChange', i => {
+    page.exposeFunction('notifyCartChange', i => {
         if(i ==='2') 
             resolve();
     })
 });
 await page.evaluate(() => {
-    let observer = new MutationObserver(list => notifiyCartChange(list[0].target.nodeValue));
+    let observer = new MutationObserver(list => notifyCartChange(list[0].target.nodeValue));
     observer.observe(
         document.querySelector('.counter.qty .counter-number'), 
         {

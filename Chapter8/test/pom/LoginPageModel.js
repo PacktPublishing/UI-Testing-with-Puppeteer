@@ -14,7 +14,7 @@ module.exports = class LoginPageModel {
 
     async logState() {
         await this.page.waitForSelector('#navbarTop .nav-link');
-        return await this.page.evaluate(() => document.querySelector('#navbarTop .nav-link').innerText);
+        return await this.page.$eval('#navbarTop .nav-link', el => el.innerText);
     }
 
     async login(user, password) {
