@@ -30,7 +30,7 @@ describe('tic-tac-toe Test', () => {
         await browser.close();
     })
 
-    it.only('Should Play', async() => {
+    it('Should Play', async() => {
       const startingX = 20;
       const startingY = 20;
       const boxMiddle = 16;

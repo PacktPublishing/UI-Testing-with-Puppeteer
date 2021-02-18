@@ -39,15 +39,18 @@ describe('Login Page', () => {
     });
 
     it('Should login on 3G', async() => {
-      await page._client.send(
-        'Network.emulateNetworkConditions',
+      await page.emulateNetworkConditions(NetworkPresets.Good3G);
+      await pageModel.login(config.username, config.password);
+      await page.waitForSelector('.thumbnail.card');
+    });
+
+    it('Should login on 3G with custom settings', async() => {
+      await page.emulateNetworkConditions(
         {
-          offline: false,
-          downloadThroughput: 750 * 1024 / 8,
-          uploadThroughput: 250 * 1024 / 8,
+          download: 750 * 1024 / 8,
+          upload: 250 * 1024 / 8,
           latency: 100,
-        }
-      )
+        });
       await pageModel.login(config.username, config.password);
       await page.waitForSelector('.thumbnail.card');
     });

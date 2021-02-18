@@ -5,5 +5,6 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
     await page.emulateTimezone('Europe/London');
     await page.goto('https://www.unixtimestamp.com');
+    await page.screenshot({ path : './timezone.png'})
     await browser.close();
 })();
