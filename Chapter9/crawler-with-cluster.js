@@ -24,9 +24,9 @@ const { Cluster } = require('puppeteer-cluster');
         }
     });
     
-    let sitemapxml = await getSitemap();
-    let categories = await getCategories(sitemapxml);
-    let prices = [];
+    const sitemapxml = await getSitemap();
+    const categories = await getCategories(sitemapxml);
+    const prices = [];
 
     async function getBooks({ page, data}) {
         const userAgent = await page.browser().userAgent();
@@ -73,7 +73,7 @@ function getCategories(sitemapxml) {
     let resolve;
     const promise = new Promise(r => resolve = r);
     xmlParser(sitemapxml, function(err, result) {
-        let output = result.urlset.url
+        const output = result.urlset.url
             .filter(url => url.loc[0].match(/\//g).length === 3)
             .slice(0, 10)
             .map(url => url.loc[0]);
