@@ -12,7 +12,7 @@ module.exports = ({
         password: 'admin',
         launchOptions: { 
             executablePath: process.env.PUPPETEER_EXEC_PATH,
-            headless: false,
+            headless: true,
             args: ['--no-sandbox'],
         },
         timeout: 5000,

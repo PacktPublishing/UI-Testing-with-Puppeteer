@@ -16,7 +16,7 @@ module.exports = ({
         productToTestName: 'Macbook Pro 13.3\' Retina MF841LL/A',
         launchOptions: { 
             executablePath: process.env.PUPPETEER_EXEC_PATH,
-            headless: false,
+            headless: true,
             args: ['--no-sandbox'],
         },
         timeout: 5000,
