@@ -45,8 +45,9 @@ describe('Home Page', () => {
     });
 
     it('Should load all images', async() => {
-(await page.evaluateHandle(() => 
-  Array.from(document.querySelectorAll('IMG')).filter(e => !e.naturalWidth).length)).should.equal(0);
+      const images = (await page.evaluateHandle(() => 
+        Array.from(document.querySelectorAll('IMG')).filter(e => !e.naturalWidth)));
+       (await images.evaluate(e => e.length)).should.equal(0);
     });
 
     const deleteFolderRecursive = function(path) {

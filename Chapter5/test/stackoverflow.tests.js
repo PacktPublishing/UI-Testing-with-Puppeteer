@@ -35,8 +35,8 @@ describe('Stackoverflow Test', () => {
         expect(jobs).not.to.be.empty;
     });
 
-    it('Should show jobs near you', async() => {
+    it('Should show jobs', async() => {
         const title = await page.waitForSelector('#hireme .header .grid--cell.fl1');
-        expect(await title.evaluate(e => e.innerText)).to.be.equal('Jobs near you');
+        expect(await title.evaluate(e => e.innerText)).to.contain('job');
     });
 });
