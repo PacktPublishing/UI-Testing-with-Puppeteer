@@ -12,13 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Chapter 3
-      uses: mujo-code/puppeteer-headful@master
-      env:
-        TESTENV: 'CI'
-        CI: 'true'
-      with:
-        args: sh ./.github/workflows/test.sh "Chapter3"
     - name: Chapter 4
       uses: mujo-code/puppeteer-headful@master
       env:
