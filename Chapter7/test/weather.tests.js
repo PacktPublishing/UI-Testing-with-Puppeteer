@@ -21,7 +21,7 @@ describe('Weather Channel Test', () => {
     })
 
     afterEach(async () => {
-        await page.close();
+        await page.close().catch({});
     })
 
     after(async () => {
