@@ -18,6 +18,7 @@ module.exports = ({
             executablePath: process.env.PUPPETEER_EXEC_PATH,
             headless: true,
             args: ['--no-sandbox'],
+            defaultViewport: null
         },
         timeout: 5000,
     },
