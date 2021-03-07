@@ -8,7 +8,7 @@ await page.goto('https://www.packtpub.com/tech/javascript/');
 const cookieLink = await page.waitForSelector('.accept_all', { timeout : 1000}).catch(e => e);
 
 if (cookieLink) {
-    await cookieLink.click();
+    await cookieLink.click().catch({});
 }
 
 await Promise.all([

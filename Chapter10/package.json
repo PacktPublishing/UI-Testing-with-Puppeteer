@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 300000 --reporter=list"
+    "test": "mocha --timeout 300000 --reporter=list --retries 3"
   },
   "keywords": [],
   "author": "",

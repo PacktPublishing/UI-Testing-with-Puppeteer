@@ -48,7 +48,7 @@ describe('Packpub search Test', () => {
         const cookieLink = await page.waitForSelector('.accept_all', { timeout: 1000 }).catch(e => e);
 
         if (cookieLink) {
-            await cookieLink.click();
+            await cookieLink.click().catch({});
         }
 
         await Promise.all([
@@ -103,7 +103,7 @@ describe('Packpub search Test', () => {
         const cookieLink = await page.waitForSelector('.accept_all', { timeout: 1000 }).catch(e => e);
 
         if (cookieLink) {
-            await cookieLink.click();
+            await cookieLink.click().catch({});
         }
 
         await Promise.all([

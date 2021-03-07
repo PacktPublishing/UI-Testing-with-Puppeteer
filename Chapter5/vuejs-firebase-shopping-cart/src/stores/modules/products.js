@@ -44,7 +44,7 @@ const state = {
       id: 5,
       price: 656,
       quantity: 5,
-      thumbnail_url: "https://www.dropbox.com/s/d45c3pap1h4cssu0y/img5.jpg?raw=1",
+      thumbnail_url: "https://www.dropbox.com/s/kbuanen8970nin0/img5.jpg?raw=1",
       title: "MacBook Air 13.3' MJVE2",
     },
     {
