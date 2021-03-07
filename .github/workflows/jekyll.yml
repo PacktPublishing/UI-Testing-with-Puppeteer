@@ -12,17 +12,53 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Install Web Dependencies
-      working-directory: ./Chapter3/vuejs-firebase-shopping-cart
-      run: npm install
-    - name: Install Test Dependencies
-      env:
-        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
-      run: npm install
-    - name: Run Site Test Code
+    - name: Chapter 3
       uses: mujo-code/puppeteer-headful@master
       env:
         TESTENV: 'CI'
         CI: 'true'
       with:
-        args: sh ./.github/workflows/test.sh
+        args: sh ./.github/workflows/test.sh "Chapter3"
+    - name: Chapter 4
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh "Chapter4"
+    - name: Chapter 5
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh "Chapter5"
+    - name: Chapter 6
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh "Chapter6"
+    - name: Chapter 7
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh "Chapter7"
+    - name: Chapter 8
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh "Chapter8"
+    - name: Chapter 10
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        TESTENV: 'CI'
+        CI: 'true'
+      with:
+        args: sh ./.github/workflows/test.sh "Chapter10"
+        
