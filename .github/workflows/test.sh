@@ -1,16 +1,23 @@
 cd ./Chapter3/vuejs-firebase-shopping-cart
 npm run serve & npx wait-on http://localhost:8080
 cd ..
+npm install
 npm test
 cd ../Chapter4
+npm install
 npm test
 cd ../Chapter5
+npm install
 npm test
 cd ../Chapter6
+npm install
 npm test
 cd ../Chapter7
+npm install
 npm test
 cd ../Chapter8
+npm install
 npm test
 cd ../Chapter10
+npm install
 npm test
