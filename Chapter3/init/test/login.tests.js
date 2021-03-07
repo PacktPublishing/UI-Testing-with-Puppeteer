@@ -31,17 +31,22 @@ describe('Login Page', () => {
         (await pageModel.title()).should.equal('Login');
     });
 
-    const deleteFolderRecursive = function (path) {
-        if (fs.existsSync(path)) {
+    const deleteFolderRecursive = function(path) {
+        try {
+          if (fs.existsSync(path)) {
             fs.readdirSync(path).forEach((file, index) => {
-                const curPath = Path.join(path, file);
-                if (fs.lstatSync(curPath).isDirectory()) { // recurse
-                    deleteFolderRecursive(curPath);
-                } else { // delete file
-                    fs.unlinkSync(curPath);
-                }
+              const curPath = Path.join(path, file);
+              if (fs.lstatSync(curPath).isDirectory()) { // recurse
+                deleteFolderRecursive(curPath);
+              } else { // delete file
+                fs.unlinkSync(curPath);
+              }
             });
             fs.rmdirSync(path);
+          }
         }
-    };
+        catch {
+          console.log('Unabled to delete folder');
+        }
+      };
 });

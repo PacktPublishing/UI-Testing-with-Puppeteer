@@ -51,6 +51,7 @@ describe('Home Page', () => {
     });
 
     const deleteFolderRecursive = function(path) {
+      try {
         if (fs.existsSync(path)) {
           fs.readdirSync(path).forEach((file, index) => {
             const curPath = Path.join(path, file);
@@ -62,5 +63,9 @@ describe('Home Page', () => {
           });
           fs.rmdirSync(path);
         }
-      };
+      }
+      catch {
+        console.log('Unabled to delete folder');
+      }
+    };
 });

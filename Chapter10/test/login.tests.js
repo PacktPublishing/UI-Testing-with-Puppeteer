@@ -90,8 +90,9 @@ describe('Login Page', () => {
       await pageModel.login(config.username, config.password);
       await promise;
     });
-
+    
     const deleteFolderRecursive = function(path) {
+      try {
         if (fs.existsSync(path)) {
           fs.readdirSync(path).forEach((file, index) => {
             const curPath = Path.join(path, file);
@@ -103,5 +104,9 @@ describe('Login Page', () => {
           });
           fs.rmdirSync(path);
         }
-      };
+      }
+      catch {
+        console.log('Unabled to delete folder');
+      }
+    };
 });
