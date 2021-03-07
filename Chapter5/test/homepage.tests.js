@@ -14,7 +14,6 @@ describe('Home Page', () => {
     
     before(async() => {
         browser = await puppeteer.launch(config.launchOptions);
-
     });
 
     beforeEach(async () => {

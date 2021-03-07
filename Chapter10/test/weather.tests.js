@@ -11,7 +11,7 @@ describe('Weather Channel Test', () => {
     let page;
     
     before(async() => {
-        browser = await puppeteer.launch({headless: false, defaultViewport: null});
+        browser = await puppeteer.launch(config.launchOptions);
 
     });
 

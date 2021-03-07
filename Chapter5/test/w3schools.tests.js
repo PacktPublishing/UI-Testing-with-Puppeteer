@@ -12,7 +12,7 @@ describe('w3Schools hover Test', () => {
     let pageModel;
     
     before(async() => {
-        browser = await puppeteer.launch({headless: false, defaultViewport: null});
+        browser = await puppeteer.launch(config.launchOptions);
 
     });
 

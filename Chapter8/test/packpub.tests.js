@@ -9,23 +9,21 @@ const Path = require('path');
 describe('Packpub search Test', () => {
     let browser;
     let page;
-    
-    before(async() => {
-        browser = await puppeteer.launch({headless: false, defaultViewport: null});
 
+    before(async () => {
     });
 
     beforeEach(async () => {
+        browser = await puppeteer.launch(config.launchOptions);
         page = await browser.newPage();
         page.setDefaultTimeout(config.timeout);
     })
 
     afterEach(async () => {
-        await page.close();
+        await browser.close();
     })
 
     after(async () => {
-        await browser.close();
     })
 
     it('Should send geolocation', async() => {
