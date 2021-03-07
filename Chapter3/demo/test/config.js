@@ -4,7 +4,7 @@ module.exports = ({
         username: 'admin@gmail.com',
         password: 'admin',
         launchOptions: { headless: false },
-        timeout: 5000,
+        timeout: 50000,
     },
     CI: {
         baseURL : 'http://localhost:8080/',
@@ -15,7 +15,7 @@ module.exports = ({
             headless: true,
             args: ['--no-sandbox'],
         },
-        timeout: 5000,
+        timeout: 50000,
     },
     prod: {}
 })[process.env.TESTENV || 'local'];

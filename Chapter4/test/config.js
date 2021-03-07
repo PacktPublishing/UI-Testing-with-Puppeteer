@@ -6,7 +6,7 @@ module.exports = ({
         productToTestName: 'Macbook Pro 13.3\' Retina MF841LL/A',
         productToTestId: 1,
         launchOptions: { headless: false },
-        timeout: 5000,
+        timeout: 50000,
     },
     CI: {
         baseURL : 'http://localhost:8080/',
@@ -18,7 +18,7 @@ module.exports = ({
             headless: false,
             args: ['--no-sandbox'],
         },
-        timeout: 5000,
+        timeout: 50000,
     },
     prod: {}
 })[process.env.TESTENV || 'local'];

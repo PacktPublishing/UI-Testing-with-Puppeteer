@@ -20,7 +20,7 @@ module.exports = ({
             args: ['--no-sandbox'],
             defaultViewport: null
         },
-        timeout: 5000,
+        timeout: 50000,
     },
     prod: {}
 })[process.env.TESTENV || 'local'];
