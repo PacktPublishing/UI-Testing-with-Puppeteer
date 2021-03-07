@@ -3,7 +3,9 @@ on:
   schedule:
   - cron: "0 2 * * *"
   workflow_dispatch:
-  
+  push:
+    branches:
+      - master
 jobs:
   test:
     name: Test
@@ -11,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Install Web Dependencies
-      working-directory: ./vuejs-firebase-shopping-cart
+      working-directory: ./Chapter3/vuejs-firebase-shopping-cart
       run: npm install
     - name: Install Test Dependencies
       env:
