@@ -2,7 +2,8 @@ name: Test project
 on:
   schedule:
   - cron: "0 2 * * *"
-
+  workflow_dispatch:
+  
 jobs:
   test:
     name: Test
