@@ -21,7 +21,7 @@ describe('Weather Channel Test', () => {
 
     it('Should send geolocation', async() => {
         const promise = page.waitForRequest(r => r.url().includes('redux-dal'));
-        await page.goto('https://weather.com/');
+        await page.goto('https://weather.com/', { waitUntil: 'domcontentloaded'});
         const request = await promise;
         const json = JSON.parse(request.postData());
         expect(json[0].params.geocode).not.be.empty;
