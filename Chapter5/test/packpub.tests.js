@@ -8,22 +8,25 @@ const Path = require('path');
 
 describe('Packpub search Test', () => {
     let browser;
+    let context;
     let page;
 
     before(async () => {
+        browser = await puppeteer.launch(config.launchOptions);
     });
 
     beforeEach(async () => {
-        browser = await puppeteer.launch(config.launchOptions);
-        page = await browser.newPage();
+        context = await browser.createIncognitoBrowserContext();
+        page = await context.newPage();
         page.setDefaultTimeout(config.timeout);
     })
 
     afterEach(async () => {
-        await browser.close();
+        await context.close();
     })
 
     after(async () => {
+        await browser.close();
     })
 
     it('Should send geolocation', async () => {
