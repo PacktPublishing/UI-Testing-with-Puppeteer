@@ -50,7 +50,7 @@ const { Cluster } = require('puppeteer-cluster');
         await page.waitForSelector('.price-list__item .price-list__price');
         prices.push(await page.evaluate(()=> {
             const prices = document.querySelectorAll('.price-list__item .price-list__price');
-            if(document.querySelectorAll('.price-list__name')[1].innerText.trim() == 'Print + eBook') {
+            if (document.querySelectorAll('.price-list__name').length > 2 && document.querySelectorAll('.price-list__name')[2].innerText.trim() === 'eBook') {
                 return {
                     book: document.querySelector('.product-info__title').innerText,
                     print: prices[1].innerText,
@@ -66,7 +66,9 @@ const { Cluster } = require('puppeteer-cluster');
 
     await cluster.idle();
     await cluster.close();
-    fs.writeFile('./prices.json', prices);
+    fs.writeFile('./prices.json', JSON.stringify(prices), function(err, result) {
+        if(err) console.log('error', err);
+    });
 })();
 
 function getCategories(sitemapxml) {
