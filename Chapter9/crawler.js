@@ -24,7 +24,9 @@ const fs = require('fs');
         }
     }
 
-    fs.writeFile('./prices.json', prices);
+    fs.writeFile('./prices.json', JSON.stringify(prices), function(err, result) {
+        if(err) console.log('error', err);
+    });
     page.browser().close();
 })();
 
@@ -34,7 +36,7 @@ async function getPrice(bookURL, page) {
         await page.waitForSelector('.price-list__item .price-list__price');
         return await page.evaluate(()=> {
             const prices = document.querySelectorAll('.price-list__item .price-list__price');
-            if(document.querySelectorAll('.price-list__name')[1].innerText.trim() == 'Print + eBook') {
+            if (document.querySelectorAll('.price-list__name').length > 2 && document.querySelectorAll('.price-list__name')[2].innerText.trim() === 'eBook') {
                 return {
                     book: document.querySelector('.product-info__title').innerText,
                     print: prices[1].innerText,
