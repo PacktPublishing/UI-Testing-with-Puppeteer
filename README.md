@@ -65,6 +65,11 @@ With the following software and hardware list you can run all code files present
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781800206786_ColorImages.pdf).
 
 
+## Errata
+
+* **Preface**, Disclaimer (line 2): **We are going to test websites like GitHub.com, StackOverlow.com, The Weather Channel, and PacktPub.** _should be_ **We are going to test websites like GitHub.com, StackOverflow.com, The Weather Channel, and PacktPub.**
+
+
 ### Related products <Other books you may enjoy>
 * End-to-End Web Testing with Cypress [[Packt]](https://www.packtpub.com/product/end-to-end-web-testing-with-cypress/9781839213854?utm_source=github&utm_medium=repository&utm_campaign=9781839213854) [[Amazon]](https://www.amazon.com/dp/183921385X)
 
